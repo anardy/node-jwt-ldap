@@ -105,8 +105,8 @@ Using Postman or curl
 **POST** localhost:3000/login
 
 ```
-username: **user create**
-password: **password create**
+username: user create
+password: password create
 ```
 
 Copy the generated token.
