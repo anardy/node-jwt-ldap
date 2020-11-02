@@ -109,6 +109,14 @@ username: user create
 password: password create
 ```
 
+curl example
+
+```bash
+curl -X POST http://localhost:3000/login \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-d "username=USER CREATE&password=PASSWORD CREATE"
+```
+
 Copy the generated token.
 
 2. Request on the protected route
@@ -119,10 +127,22 @@ Copy the generated token.
 Authorization: bearer Token
 ```
 
+curl example
+
+```bash
+curl http://localhost:3000/dash -H "Authorization: bearer TOKEN"
+```
+
 3. Request on the protected route per department
 
 **GET** localhost:3000/department
 
 ```
 Authorization: bearer Token
+```
+
+curl example
+
+```bash
+curl http://localhost:3000/department -H "Authorization: bearer TOKEN"
 ```
