@@ -14,13 +14,36 @@ docker run -p 389:389 --name openldap --env LDAP_ORGANISATION="Nardy" --env LDAP
 ldapsearch -H ldap://localhost -b "dc=nardy,dc=com,dc=br" -D "cn=admin,dc=nardy,dc=com,dc=br" -x -w admin
 ```
 
+Expected return
+
+```
+objectClass: dcObject
+objectClass: organization
+o: Nardy
+dc: nardy
+
+# admin, nardy.com.br
+dn: cn=admin,dc=nardy,dc=com,dc=br
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 3
+# numEntries: 2
+```
+
 ## Run phpLdapAdmin
 
 ```bash
 docker run -p 6443:443 --name phpldapadmin --hostname phpldapadmin --link openldap:nardy --env PHPLDAPADMIN_LDAP_HOSTS=nardy --detach osixia/phpldapadmin:0.9.0
 ```
 
-Access (phpLdapAdmin)[https://localhost:6443]
+Access [phpLdapAdmin](https://localhost:6443)
 
 **Login DN**: cn=admin,dc=nardy,dc=com,dc=br
 **Password**: admin
