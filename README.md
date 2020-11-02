@@ -64,7 +64,7 @@ On browser access [phpLdapAdmin](https://localhost:6443)
 
 ## Create Group Ldap
 
-1. In left Menu click on **Create nee entry here**
+1. In left Menu click on **Create new entry here**
 2. Click on **Generic: Organisational Unit**
 3. Name: rh
 
@@ -76,7 +76,11 @@ On browser access [phpLdapAdmin](https://localhost:6443)
 4. Select **inetOrgPerson**
 5. Select RDS **cn (cn)**
 6. Fill the fields
-    1. In filed *departmentNumber* fill in with **rh**
+    1. *cn*: user name
+    2. *sn*: user name
+    3. *departmentNumber*: **rh**
+    4. *User Name*: user name
+    4. *Password*: password
 
 ## Run app
 

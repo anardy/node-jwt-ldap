@@ -37,7 +37,8 @@ app.use(passport.initialize());
  
 app.post('/login', (req, res, next) => {
     passport.authenticate('ldapauth', {session: false}, (err, user) => {
-        console.log(user)
+        // info user
+        //console.log(user)
         if (err) {
             return next(err); // will generate a 500 error
         }
