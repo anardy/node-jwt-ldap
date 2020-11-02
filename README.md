@@ -5,13 +5,21 @@ Example NodeJS + JWT + Ldap using Passport
 ## Run OpenLdap
 
 ```bash
-docker run -p 389:389 --name openldap --env LDAP_ORGANISATION="Nardy" --env LDAP_DOMAIN="nardy.com.br" --env LDAP_ADMIN_PASSWORD="admin" --detach osixia/openldap:1.4.0
+docker run -p 389:389 \
+--name openldap \
+--env LDAP_ORGANISATION="Nardy" \
+--env LDAP_DOMAIN="nardy.com.br" \
+--env LDAP_ADMIN_PASSWORD="admin" \
+--detach osixia/openldap:1.4.0
 ```
 
 ## Test OpenLdap
 
 ```bash
-ldapsearch -H ldap://localhost -b "dc=nardy,dc=com,dc=br" -D "cn=admin,dc=nardy,dc=com,dc=br" -x -w admin
+ldapsearch -H ldap://localhost \
+-b "dc=nardy,dc=com,dc=br" \
+-D "cn=admin,dc=nardy,dc=com,dc=br" \
+-x -w admin
 ```
 
 Expected return
@@ -40,7 +48,12 @@ result: 0 Success
 ## Run phpLdapAdmin
 
 ```bash
-docker run -p 6443:443 --name phpldapadmin --hostname phpldapadmin --link openldap:nardy --env PHPLDAPADMIN_LDAP_HOSTS=nardy --detach osixia/phpldapadmin:0.9.0
+docker run -p 6443:443 \
+--name phpldapadmin \
+--hostname phpldapadmin \
+--link openldap:nardy \
+--env PHPLDAPADMIN_LDAP_HOSTS=nardy \
+--detach osixia/phpldapadmin:0.9.0
 ```
 
 Access [phpLdapAdmin](https://localhost:6443)
