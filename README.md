@@ -56,9 +56,10 @@ docker run -p 6443:443 \
 --detach osixia/phpldapadmin:0.9.0
 ```
 
-Access [phpLdapAdmin](https://localhost:6443)
+On browser access [phpLdapAdmin](https://localhost:6443)
 
 **Login DN**: cn=admin,dc=nardy,dc=com,dc=br
+
 **Password**: admin
 
 ## Create Group Ldap
@@ -101,7 +102,7 @@ Using Postman or curl
 
 ```
 username: **user create**
-username: **password create**
+password: **password create**
 ```
 
 Copy the generated token.
